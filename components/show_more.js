@@ -1,18 +1,19 @@
 const show_more = {
-    width: "100%",
     margin: "20px 0 100px 0",
-    height: 100,
+    textAlign: "center",
     fontSize: 49,
     textTransform: "uppercase",
     color: "#46648e",
     textDecoration: "none",
     border: "2px solid #ccc",
-    background: "#fff"
+    background: "#fff",
+    padding: "15px 0 15px 0",
+    cursor: "pointer"
 };
 
 const Show_more = (props) => (
     <div>
-        <button style={show_more}>show more</button>
+        <div style={show_more}>show more</div>
     </div>
 );
 

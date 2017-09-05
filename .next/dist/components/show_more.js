@@ -13,26 +13,27 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _jsxFileName = "C:\\Users\\ruzhi\\WebstormProjects\\Blog_Next.JS\\components\\show_more.js";
 
 var show_more = {
-    width: "100%",
     margin: "20px 0 100px 0",
-    height: 100,
+    textAlign: "center",
     fontSize: 49,
     textTransform: "uppercase",
     color: "#46648e",
     textDecoration: "none",
     border: "2px solid #ccc",
-    background: "#fff"
+    background: "#fff",
+    padding: "15px 0 15px 0",
+    cursor: "pointer"
 };
 
 var Show_more = function Show_more(props) {
     return _react2.default.createElement("div", {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 14
-        }
-    }, _react2.default.createElement("button", { style: show_more, __source: {
-            fileName: _jsxFileName,
             lineNumber: 15
+        }
+    }, _react2.default.createElement("div", { style: show_more, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16
         }
     }, "show more"));
 };

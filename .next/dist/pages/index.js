@@ -36,6 +36,10 @@ var _show_more = require('../components/show_more');
 
 var _show_more2 = _interopRequireDefault(_show_more);
 
+var _reactMasonryComponent = require('react-masonry-component');
+
+var _reactMasonryComponent2 = _interopRequireDefault(_reactMasonryComponent);
+
 var _link = require('next\\dist\\lib\\link.js');
 
 var _link2 = _interopRequireDefault(_link);
@@ -59,25 +63,19 @@ var container = {
     margin: "0 auto"
 };
 
-var card_wrapper = {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap"
-};
-
 var card = {
     boxShadow: "0 5px 5px rgba(0, 0, 0, 0.31)",
-    marginBottom: 30
+    marginBottom: 30,
+    width: 685
 };
 
 var card_img = {
-    maxWidth: 635,
     position: "relative"
 };
 
 var article_name = {
     background: "#fbaf5d",
-    maxWidth: 200,
+    width: 200,
     marginLeft: 35,
     position: "absolute",
     bottom: 0,
@@ -103,78 +101,79 @@ var description = {
     fontFamily: "Roboto"
 };
 
+var masonryOptions = {
+    transitionDuration: 0,
+    gutter: 30
+};
+
 var Index = function Index(props) {
     return _react2.default.createElement(_MyLayout2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 67
         }
     }, _react2.default.createElement(_Banner2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 68
         }
     }), _react2.default.createElement(_Search_title2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 68
+            lineNumber: 69
         }
     }), _react2.default.createElement('div', { style: container, __source: {
             fileName: _jsxFileName,
-            lineNumber: 69
+            lineNumber: 70
         }
     }, _react2.default.createElement(_Search2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 70
+            lineNumber: 71
         }
-    }), _react2.default.createElement('div', { style: card_wrapper, __source: {
+    }), _react2.default.createElement(_reactMasonryComponent2.default, { className: 'masonry', options: masonryOptions, __source: {
             fileName: _jsxFileName,
-            lineNumber: 72
+            lineNumber: 73
         }
     }, props.shows && props.shows.map(function (show) {
-        return _react2.default.createElement('div', { style: card, key: show.id, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 74
-            }
-        }, _react2.default.createElement('div', { style: card_img, __source: {
+        return _react2.default.createElement('div', { className: 'card', style: card, key: show.id, __source: {
                 fileName: _jsxFileName,
                 lineNumber: 75
             }
-        }, _react2.default.createElement(_link2.default, { as: '/p/' + show.id, href: '/post?id=' + show.id, __source: {
+        }, _react2.default.createElement('div', { className: 'card-img', style: card_img, __source: {
                 fileName: _jsxFileName,
                 lineNumber: 76
             }
-        }, _react2.default.createElement('a', { style: description, __source: {
+        }, _react2.default.createElement(_link2.default, { as: '/p/' + show.id, href: '/post?id=' + show.id, __source: {
                 fileName: _jsxFileName,
                 lineNumber: 77
             }
-        }, _react2.default.createElement('img', { style: img, src: show.better_featured_image.source_url, __source: {
+        }, _react2.default.createElement('a', { style: description, __source: {
                 fileName: _jsxFileName,
                 lineNumber: 78
             }
-        }), _react2.default.createElement('div', { style: article_name, __source: {
+        }, _react2.default.createElement('img', { style: img, src: show.better_featured_image.source_url, __source: {
                 fileName: _jsxFileName,
                 lineNumber: 79
             }
-        }, _react2.default.createElement('p', { style: description, __source: {
+        }), _react2.default.createElement('div', { className: 'title', style: article_name, dangerouslySetInnerHTML: { __html: show.excerpt.rendered }, __source: {
                 fileName: _jsxFileName,
                 lineNumber: 80
             }
-        }, show.excerpt.rendered))))), _react2.default.createElement('div', { style: title_name, __source: {
+        })))), _react2.default.createElement('div', { style: title_name, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 85
+                lineNumber: 84
             }
         }, _react2.default.createElement('span', {
             __source: {
                 fileName: _jsxFileName,
-                lineNumber: 86
+                lineNumber: 85
             }
         }, show.title.rendered)));
     })), _react2.default.createElement(_show_more2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 106
+            lineNumber: 91
         }
     })));
 };

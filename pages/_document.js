@@ -10,6 +10,7 @@ export default class MyDocument extends Document {
             <html>
             <Head>
                 <title>My page</title>
+                <link href="/static/styles.css" rel="stylesheet" />
             </Head>
             <body style={body}>
             <div className='root'>

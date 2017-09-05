@@ -3,6 +3,7 @@ import Search from '../components/Search'
 import Banner from '../components/Banner'
 import Search_title from '../components/Search_title'
 import Show_more from '../components/show_more'
+import Masonry from 'react-masonry-component';
 
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
@@ -18,29 +19,23 @@ const container = {
     margin: "0 auto"
 };
 
-const card_wrapper = {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap"
-};
-
 const card = {
     boxShadow: "0 5px 5px rgba(0, 0, 0, 0.31)",
-    marginBottom: 30
+    marginBottom: 30,
+    width: 685
 };
 
 const card_img = {
-    maxWidth: 635,
     position: "relative"
 };
 
 const article_name = {
     background: "#fbaf5d",
-    maxWidth: 200,
+    width: 200,
     marginLeft: 35,
     position: "absolute",
     bottom: 0,
-    textAlign: "center"
+    textAlign: "center",
 };
 
 const title_name = {
@@ -62,46 +57,36 @@ const description = {
     fontFamily: "Roboto"
 };
 
+const masonryOptions = {
+    transitionDuration: 0,
+    gutter: 30
+};
+
 const Index = (props) => (
+
     <Layout>
         <Banner />
         <Search_title />
         <div style={container}>
             <Search />
 
-            <div style={card_wrapper}>
-                {props.shows && props.shows.map((show) => (
-                    <div style={card} key={show.id}>
-                        <div style={card_img}>
-                            <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
-                                <a style={description}>
-                                <img style={img} src={show.better_featured_image.source_url}/>
-                                <div style={article_name}>
-                                    <p style={description}>{show.excerpt.rendered}</p>
-                                </div>
-                                </a>
-                            </Link>
+                <Masonry className="masonry" options={masonryOptions}>
+                    {props.shows && props.shows.map((show) => (
+                        <div className="card" style={card} key={show.id}>
+                            <div className="card-img" style={card_img}>
+                                <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
+                                    <a style={description}>
+                                        <img style={img} src={show.better_featured_image.source_url}/>
+                                        <div className="title" style={article_name} dangerouslySetInnerHTML={{ __html: show.excerpt.rendered }}/>
+                                    </a>
+                                </Link>
+                            </div>
+                            <div style={title_name}>
+                                <span>{show.title.rendered}</span>
+                            </div>
                         </div>
-                        <div style={title_name}>
-                            <span>{show.title.rendered}</span>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
-            {/*<div style={cardWrapper}>*/}
-                {/*{props.shows && props.shows.map((show) => (*/}
-                    {/*<div key={show.id}>*/}
-                        {/*<Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>*/}
-                            {/*<a>*/}
-                                {/*{show.better_featured_image && <img style={img} src={show.better_featured_image.source_url}/>}*/}
-                                {/*{show.title.rendered}*/}
-                                {/*{show.excerpt.rendered}*/}
-                            {/*</a>*/}
-                        {/*</Link>*/}
-                    {/*</div>*/}
-                {/*))}*/}
-            {/*</div>*/}
+                    ))}
+                </Masonry>
 
             <Show_more />
         </div>
