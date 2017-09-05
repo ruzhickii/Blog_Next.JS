@@ -139,7 +139,7 @@ var Index = function Index(props) {
                 fileName: _jsxFileName,
                 lineNumber: 73
             }
-        }, _react2.default.createElement('div', { style: card_img, __source: {
+        }, _react2.default.createElement('div', { className: 'card_img', style: card_img, __source: {
                 fileName: _jsxFileName,
                 lineNumber: 74
             }

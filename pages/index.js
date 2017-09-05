@@ -26,7 +26,7 @@ const card = {
 };
 
 const card_img = {
-    position: "relative"
+    position: "relative",
 };
 
 const article_name = {
@@ -71,7 +71,7 @@ const Index = (props) => (
                 <Masonry options={masonryOptions}>
                     {props.shows && props.shows.map((show) => (
                         <div className="card" style={card} key={show.id}>
-                            <div style={card_img}>
+                            <div className="card_img" style={card_img}>
                                 <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
                                     <a style={description}>
                                         <img style={img} src={show.better_featured_image.source_url}/>
