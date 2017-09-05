@@ -40,12 +40,12 @@ const Navigation = () => (
                 </Link>
             </li>
             <li>
-                <Link href="#">
+                <Link href="/about_us">
                     <a style={aStyles}>about us</a>
                 </Link>
             </li>
             <li>
-                <Link href="#">
+                <Link href="/lets_talk">
                     <a style={aStyles}>lets talk!</a>
                 </Link>
             </li>

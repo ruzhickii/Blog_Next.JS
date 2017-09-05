@@ -96,7 +96,7 @@ var Navigation = function Navigation() {
             fileName: _jsxFileName,
             lineNumber: 58
         }
-    }, _react2.default.createElement(_link2.default, { href: "/", __source: {
+    }, _react2.default.createElement(_link2.default, { href: "/about_us", __source: {
             fileName: _jsxFileName,
             lineNumber: 59
         }
@@ -108,7 +108,7 @@ var Navigation = function Navigation() {
             fileName: _jsxFileName,
             lineNumber: 63
         }
-    }, _react2.default.createElement(_link2.default, { href: "/", __source: {
+    }, _react2.default.createElement(_link2.default, { href: "/lets_talk", __source: {
             fileName: _jsxFileName,
             lineNumber: 64
         }

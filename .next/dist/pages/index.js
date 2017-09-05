@@ -74,7 +74,6 @@ var card_img = {
 };
 
 var article_name = {
-    background: "#fbaf5d",
     width: 200,
     marginLeft: 35,
     position: "absolute",
@@ -110,70 +109,70 @@ var Index = function Index(props) {
     return _react2.default.createElement(_MyLayout2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 66
         }
     }, _react2.default.createElement(_Banner2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 68
+            lineNumber: 67
         }
     }), _react2.default.createElement(_Search_title2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 69
+            lineNumber: 68
         }
     }), _react2.default.createElement('div', { style: container, __source: {
             fileName: _jsxFileName,
-            lineNumber: 70
+            lineNumber: 69
         }
     }, _react2.default.createElement(_Search2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 71
+            lineNumber: 70
         }
-    }), _react2.default.createElement(_reactMasonryComponent2.default, { className: 'masonry', options: masonryOptions, __source: {
+    }), _react2.default.createElement(_reactMasonryComponent2.default, { options: masonryOptions, __source: {
             fileName: _jsxFileName,
-            lineNumber: 73
+            lineNumber: 71
         }
     }, props.shows && props.shows.map(function (show) {
         return _react2.default.createElement('div', { className: 'card', style: card, key: show.id, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 75
+                lineNumber: 73
             }
-        }, _react2.default.createElement('div', { className: 'card-img', style: card_img, __source: {
+        }, _react2.default.createElement('div', { style: card_img, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 76
+                lineNumber: 74
             }
         }, _react2.default.createElement(_link2.default, { as: '/p/' + show.id, href: '/post?id=' + show.id, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 77
+                lineNumber: 75
             }
         }, _react2.default.createElement('a', { style: description, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 78
+                lineNumber: 76
             }
         }, _react2.default.createElement('img', { style: img, src: show.better_featured_image.source_url, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 79
+                lineNumber: 77
             }
         }), _react2.default.createElement('div', { className: 'title', style: article_name, dangerouslySetInnerHTML: { __html: show.excerpt.rendered }, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 80
+                lineNumber: 78
             }
         })))), _react2.default.createElement('div', { style: title_name, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 84
+                lineNumber: 82
             }
         }, _react2.default.createElement('span', {
             __source: {
                 fileName: _jsxFileName,
-                lineNumber: 85
+                lineNumber: 83
             }
         }, show.title.rendered)));
     })), _react2.default.createElement(_show_more2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 91
+            lineNumber: 88
         }
     })));
 };

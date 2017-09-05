@@ -7,6 +7,6 @@ const style = {
 
 export default () => (
     <Layout>
-       <p style={style}>TECHNOLOGIES PAGE!</p>
+        <p style={style}>LETS TALK PAGE!</p>
     </Layout>
 )

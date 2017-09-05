@@ -56,12 +56,12 @@ const Navigation = () => (
                 </Link>
             </li>
             <li style={navigation_item}>
-                <Link href="/">
+                <Link href="/about_us">
                     <a style={header_link} href="#">ABOUT US</a>
                 </Link>
             </li>
             <li style={navigation_item}>
-                <Link href="/">
+                <Link href="/lets_talk">
                     <a style={connect_link} href="#">LET'S TALK!</a>
                 </Link>
             </li>

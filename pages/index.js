@@ -3,8 +3,8 @@ import Search from '../components/Search'
 import Banner from '../components/Banner'
 import Search_title from '../components/Search_title'
 import Show_more from '../components/show_more'
-import Masonry from 'react-masonry-component';
 
+import Masonry from 'react-masonry-component';
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 
@@ -30,7 +30,6 @@ const card_img = {
 };
 
 const article_name = {
-    background: "#fbaf5d",
     width: 200,
     marginLeft: 35,
     position: "absolute",
@@ -69,11 +68,10 @@ const Index = (props) => (
         <Search_title />
         <div style={container}>
             <Search />
-
-                <Masonry className="masonry" options={masonryOptions}>
+                <Masonry options={masonryOptions}>
                     {props.shows && props.shows.map((show) => (
                         <div className="card" style={card} key={show.id}>
-                            <div className="card-img" style={card_img}>
+                            <div style={card_img}>
                                 <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
                                     <a style={description}>
                                         <img style={img} src={show.better_featured_image.source_url}/>
@@ -87,7 +85,6 @@ const Index = (props) => (
                         </div>
                     ))}
                 </Masonry>
-
             <Show_more />
         </div>
     </Layout>
