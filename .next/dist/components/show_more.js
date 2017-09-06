@@ -17,23 +17,24 @@ var show_more = {
     textAlign: "center",
     fontSize: 49,
     textTransform: "uppercase",
-    color: "#46648e",
+    color: "#5d5f64",
     textDecoration: "none",
     border: "2px solid #ccc",
     background: "#fff",
     padding: "15px 0 15px 0",
-    cursor: "pointer"
+    cursor: "pointer",
+    fontFamily: "Open Sans, sans-serif"
 };
 
 var Show_more = function Show_more(props) {
     return _react2.default.createElement("div", {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 15
+            lineNumber: 16
         }
     }, _react2.default.createElement("div", { style: show_more, __source: {
             fileName: _jsxFileName,
-            lineNumber: 16
+            lineNumber: 17
         }
     }, "show more"));
 };

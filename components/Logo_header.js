@@ -1,8 +1,8 @@
-const logo_wrapper = {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-};
+// const logo_wrapper = {
+//     display: "flex",
+//     justifyContent: "space-between",
+//     alignItems: "center",
+// };
 
 const logo_link = {
     display: "block",
@@ -10,7 +10,7 @@ const logo_link = {
 };
 
 const Logo = (props) => (
-    <div style={logo_wrapper}>
+    <div>
         <a style={logo_link} href="#">
             <img src="/static/logo-black.png" alt="PERCEPTION BOX" />
         </a>

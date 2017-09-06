@@ -28,7 +28,7 @@ var titleBlog = {
     fontSize: "60px",
     textAlign: "center",
     textTransform: "uppercase",
-    fontFamily: "Roboto"
+    fontFamily: "'Lato', sans-serif"
 };
 
 var Banner = function Banner(props) {

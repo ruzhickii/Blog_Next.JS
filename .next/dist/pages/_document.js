@@ -72,23 +72,31 @@ var MyDocument = function (_Document) {
                     fileName: _jsxFileName,
                     lineNumber: 13
                 }
-            })), _react2.default.createElement("body", { style: body, __source: {
+            }), _react2.default.createElement("link", { href: "https://fonts.googleapis.com/css?family=Lato", rel: "stylesheet", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 14
+                }
+            }), _react2.default.createElement("link", { href: "https://fonts.googleapis.com/css?family=Open+Sans:600", rel: "stylesheet", __source: {
                     fileName: _jsxFileName,
                     lineNumber: 15
                 }
+            })), _react2.default.createElement("body", { style: body, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 17
+                }
             }, _react2.default.createElement("div", { className: "root", __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 16
+                    lineNumber: 18
                 }
             }, _react2.default.createElement(_document.Main, {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 17
+                    lineNumber: 19
                 }
             })), _react2.default.createElement(_document.NextScript, {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 19
+                    lineNumber: 21
                 }
             })));
         }

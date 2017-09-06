@@ -1,14 +1,16 @@
 import Link from 'next/link'
 
 const blockLinkStyle = {
-    margin: 0
+    margin: 0,
+    padding: "0 60px 0 0px"
 };
 
 const ulStyles = {
     display: "flex",
     flexDirection: "row",
     listStyleType: "none",
-    margin: "0 0 35px 0"
+    margin: "0 0 20px 0",
+    justifyContent: "flex-end"
 };
 
 const liStyles = {
@@ -26,12 +28,16 @@ const aStyles = {
     textTransform: "uppercase"
 };
 
+const copyright = {
+  color: "#fff"
+};
+
 const Navigation = () => (
     <div style={blockLinkStyle}>
         <ul style={ulStyles}>
-            <li style={liStyles}>
-                <Link href="/">
-                    <a style={aStyles}>Home</a>
+            <li>
+                <Link href="/about_us">
+                    <a style={aStyles}>about us</a>
                 </Link>
             </li>
             <li>
@@ -39,17 +45,8 @@ const Navigation = () => (
                     <a style={aStyles}>technologies</a>
                 </Link>
             </li>
-            <li>
-                <Link href="/about_us">
-                    <a style={aStyles}>about us</a>
-                </Link>
-            </li>
-            <li>
-                <Link href="/lets_talk">
-                    <a style={aStyles}>lets talk!</a>
-                </Link>
-            </li>
         </ul>
+        <span style={copyright}>© PerceptionBox, Custom Software Development Company. All rights reserved.</span>
     </div>
 );
 

@@ -12,9 +12,9 @@ var _Navigation_header = require('./Navigation_header');
 
 var _Navigation_header2 = _interopRequireDefault(_Navigation_header);
 
-var _Logo = require('./Logo');
+var _Logo_header = require('./Logo_header');
 
-var _Logo2 = _interopRequireDefault(_Logo);
+var _Logo_header2 = _interopRequireDefault(_Logo_header);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31,23 +31,24 @@ var headerStyle = {
     top: 0,
     width: "100%",
     background: "#fff",
-    borderBottom: "2px solid #041936"
+    borderBottom: "2px solid #041936",
+    fontFamily: "Roboto"
 };
 
 var Header = function Header(props) {
     return _react2.default.createElement('div', { style: headerStyle, __source: {
             fileName: _jsxFileName,
-            lineNumber: 18
+            lineNumber: 19
         }
-    }, _react2.default.createElement(_Logo2.default, {
+    }, _react2.default.createElement(_Logo_header2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 19
+            lineNumber: 20
         }
     }), _react2.default.createElement(_Navigation_header2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 20
+            lineNumber: 21
         }
     }));
 };

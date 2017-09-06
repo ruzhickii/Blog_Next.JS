@@ -18,14 +18,16 @@ var _jsxFileName = "C:\\Users\\ruzhi\\WebstormProjects\\Blog_Next.JS\\components
 
 
 var blockLinkStyle = {
-    margin: 0
+    margin: 0,
+    padding: "0 60px 0 0px"
 };
 
 var ulStyles = {
     display: "flex",
     flexDirection: "row",
     listStyleType: "none",
-    margin: "0 0 35px 0"
+    margin: "0 0 20px 0",
+    justifyContent: "flex-end"
 };
 
 var liStyles = {
@@ -43,67 +45,50 @@ var aStyles = {
     textTransform: "uppercase"
 };
 
+var copyright = {
+    color: "#fff"
+};
+
 var Navigation = function Navigation() {
     return _react2.default.createElement("div", { style: blockLinkStyle, __source: {
             fileName: _jsxFileName,
-            lineNumber: 30
+            lineNumber: 36
         }
     }, _react2.default.createElement("ul", { style: ulStyles, __source: {
             fileName: _jsxFileName,
-            lineNumber: 31
-        }
-    }, _react2.default.createElement("li", { style: liStyles, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 32
-        }
-    }, _react2.default.createElement(_link2.default, { href: "/", __source: {
-            fileName: _jsxFileName,
-            lineNumber: 33
-        }
-    }, _react2.default.createElement("a", { style: aStyles, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 34
-        }
-    }, "Home"))), _react2.default.createElement("li", {
-        __source: {
-            fileName: _jsxFileName,
             lineNumber: 37
         }
-    }, _react2.default.createElement(_link2.default, { href: "/technologies", __source: {
+    }, _react2.default.createElement("li", {
+        __source: {
             fileName: _jsxFileName,
             lineNumber: 38
         }
-    }, _react2.default.createElement("a", { style: aStyles, __source: {
+    }, _react2.default.createElement(_link2.default, { href: "/about_us", __source: {
             fileName: _jsxFileName,
             lineNumber: 39
         }
-    }, "technologies"))), _react2.default.createElement("li", {
-        __source: {
-            fileName: _jsxFileName,
-            lineNumber: 42
-        }
-    }, _react2.default.createElement(_link2.default, { href: "/about_us", __source: {
-            fileName: _jsxFileName,
-            lineNumber: 43
-        }
     }, _react2.default.createElement("a", { style: aStyles, __source: {
             fileName: _jsxFileName,
-            lineNumber: 44
+            lineNumber: 40
         }
     }, "about us"))), _react2.default.createElement("li", {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 47
+            lineNumber: 43
         }
-    }, _react2.default.createElement(_link2.default, { href: "/lets_talk", __source: {
+    }, _react2.default.createElement(_link2.default, { href: "/technologies", __source: {
             fileName: _jsxFileName,
-            lineNumber: 48
+            lineNumber: 44
         }
     }, _react2.default.createElement("a", { style: aStyles, __source: {
             fileName: _jsxFileName,
+            lineNumber: 45
+        }
+    }, "technologies")))), _react2.default.createElement("span", { style: copyright, __source: {
+            fileName: _jsxFileName,
             lineNumber: 49
         }
-    }, "lets talk!")))));
+    }, "\xA9 PerceptionBox, Custom Software Development Company. All rights reserved."));
 };
 
 exports.default = Navigation;

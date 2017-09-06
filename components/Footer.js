@@ -1,20 +1,20 @@
 import Navigation from './Navigation_footer'
+import Logo from './Logo_footer'
 
 const footerStyle = {
-    color: "#fff",
-    background: "#000",
     display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-end",
     justifyContent: "space-between",
-    padding: 20,
-    fontFamily: "Roboto"
+    alignItems: "center",
+    width: "100%",
+    background: "#000",
+    fontFamily: "Roboto",
+    padding: "0 0 25px 0"
 };
 
 const Footer = (props) => (
     <div style={footerStyle}>
+        <Logo />
         <Navigation />
-        <span>© PerceptionBox, Custom Software Development Company. All rights reserved.</span>
     </div>
 
 );

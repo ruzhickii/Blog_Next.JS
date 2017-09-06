@@ -1,5 +1,5 @@
 import Navigation from './Navigation_header'
-import Logo from './Logo'
+import Logo from './Logo_header'
 
 const headerStyle = {
     display: "flex",
@@ -11,7 +11,8 @@ const headerStyle = {
     top: 0,
     width: "100%",
     background: "#fff",
-    borderBottom: "2px solid #041936"
+    borderBottom: "2px solid #041936",
+    fontFamily: "Roboto"
 };
 
 const Header = (props) => (

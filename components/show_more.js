@@ -3,12 +3,13 @@ const show_more = {
     textAlign: "center",
     fontSize: 49,
     textTransform: "uppercase",
-    color: "#46648e",
+    color: "#5d5f64",
     textDecoration: "none",
     border: "2px solid #ccc",
     background: "#fff",
     padding: "15px 0 15px 0",
-    cursor: "pointer"
+    cursor: "pointer",
+    fontFamily: "Open Sans, sans-serif"
 };
 
 const Show_more = (props) => (

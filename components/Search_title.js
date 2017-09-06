@@ -8,16 +8,16 @@ const searchTitleBlock = {
     left: 0,
     right: 0,
     background: "#fff",
-    color: "#0a2954",
+    color: "#86888c",
     margin: "0 auto",
     borderRadius: "5px"
 };
 
 const h2 = {
     color: "#5c7493",
-    lineHeight: "50px",
-    fontSize: "50px",
-    fontFamily: "Roboto",
+    lineHeight: "45px",
+    fontSize: "40px",
+    fontFamily: "Open Sans, sans-serif",
     fontWeight: "400"
 };
 
