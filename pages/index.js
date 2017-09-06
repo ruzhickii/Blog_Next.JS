@@ -61,6 +61,30 @@ const masonryOptions = {
     gutter: 30
 };
 
+const colors = {
+    backend: "#fbaf5d",
+    software: "#5674b9",
+    mobile: "#f26d7d",
+    consulting: "#c69c6d",
+    company: "#f06eaa",
+    frontend: '#7cc576'
+};
+
+function getCategory(categories, id) {
+    const category = categories.find(item => {
+        return item.id === id;
+    });
+
+    return category ? category.slug : null;
+}
+
+function getColor(slug) {
+    const style = Object.assign({}, article_name);
+    style.background = colors[slug];
+    console.log(style, "ARTICLE NAME", slug);
+    return style;
+}
+
 const Index = (props) => (
 
     <Layout>
@@ -75,7 +99,7 @@ const Index = (props) => (
                                 <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
                                     <a style={description}>
                                         <img style={img} src={show.better_featured_image.source_url}/>
-                                        <div className="title" style={article_name} dangerouslySetInnerHTML={{ __html: show.excerpt.rendered }}/>
+                                        <div className="title" style={getColor(getCategory(props.categories, show.categories[0]))} dangerouslySetInnerHTML={{ __html: show.excerpt.rendered }}/>
                                     </a>
                                 </Link>
                             </div>
@@ -94,11 +118,17 @@ Index.getInitialProps = async function() {
     const res = await fetch('http://localhost/wordpress/wp-json/wp/v2/posts/');
     const show = await res.json();
 
-    console.log(`DATA`, show);
+    const resCat = await fetch('http://localhost/wordpress/wp-json/wp/v2/categories/');
+    const category = await resCat.json();
+
+    //console.log(`DATA`, show);
     console.log(`Show data fetched. Count: ${show.length}`);
 
+    console.log('DATA', category);
+
     return {
-        shows: show
+        shows: show,
+        categories: category,
     }
 };
 

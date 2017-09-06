@@ -12,6 +12,10 @@ var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
+var _assign = require('babel-runtime/core-js/object/assign');
+
+var _assign2 = _interopRequireDefault(_assign);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -105,80 +109,104 @@ var masonryOptions = {
     gutter: 30
 };
 
+var colors = {
+    backend: "#fbaf5d",
+    software: "#5674b9",
+    mobile: "#f26d7d",
+    consulting: "#c69c6d",
+    company: "#f06eaa",
+    frontend: '#7cc576'
+};
+
+function getCategory(categories, id) {
+    var category = categories.find(function (item) {
+        return item.id === id;
+    });
+
+    return category ? category.slug : null;
+}
+
+function getColor(slug) {
+    var style = (0, _assign2.default)({}, article_name);
+    style.background = colors[slug];
+    console.log(style, "ARTICLE NAME", slug);
+    return style;
+}
+
 var Index = function Index(props) {
     return _react2.default.createElement(_MyLayout2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 90
         }
     }, _react2.default.createElement(_Banner2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 91
         }
     }), _react2.default.createElement(_Search_title2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 68
+            lineNumber: 92
         }
     }), _react2.default.createElement('div', { style: container, __source: {
             fileName: _jsxFileName,
-            lineNumber: 69
+            lineNumber: 93
         }
     }, _react2.default.createElement(_Search2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 70
+            lineNumber: 94
         }
     }), _react2.default.createElement(_reactMasonryComponent2.default, { options: masonryOptions, __source: {
             fileName: _jsxFileName,
-            lineNumber: 71
+            lineNumber: 95
         }
     }, props.shows && props.shows.map(function (show) {
         return _react2.default.createElement('div', { className: 'card', style: card, key: show.id, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 73
+                lineNumber: 97
             }
         }, _react2.default.createElement('div', { className: 'card_img', style: card_img, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 74
+                lineNumber: 98
             }
         }, _react2.default.createElement(_link2.default, { as: '/p/' + show.id, href: '/post?id=' + show.id, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 75
+                lineNumber: 99
             }
         }, _react2.default.createElement('a', { style: description, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 76
+                lineNumber: 100
             }
         }, _react2.default.createElement('img', { style: img, src: show.better_featured_image.source_url, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 77
+                lineNumber: 101
             }
-        }), _react2.default.createElement('div', { className: 'title', style: article_name, dangerouslySetInnerHTML: { __html: show.excerpt.rendered }, __source: {
+        }), _react2.default.createElement('div', { className: 'title', style: getColor(getCategory(props.categories, show.categories[0])), dangerouslySetInnerHTML: { __html: show.excerpt.rendered }, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 78
+                lineNumber: 102
             }
         })))), _react2.default.createElement('div', { style: title_name, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 82
+                lineNumber: 106
             }
         }, _react2.default.createElement('span', {
             __source: {
                 fileName: _jsxFileName,
-                lineNumber: 83
+                lineNumber: 107
             }
         }, show.title.rendered)));
     })), _react2.default.createElement(_show_more2.default, {
         __source: {
             fileName: _jsxFileName,
-            lineNumber: 88
+            lineNumber: 112
         }
     })));
 };
 
 Index.getInitialProps = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-    var res, show;
+    var res, show, resCat, category;
     return _regenerator2.default.wrap(function _callee$(_context) {
         while (1) {
             switch (_context.prev = _context.next) {
@@ -193,15 +221,28 @@ Index.getInitialProps = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerat
 
                 case 5:
                     show = _context.sent;
+                    _context.next = 8;
+                    return (0, _isomorphicUnfetch2.default)('http://localhost/wordpress/wp-json/wp/v2/categories/');
 
-                    console.log('DATA', show);
+                case 8:
+                    resCat = _context.sent;
+                    _context.next = 11;
+                    return resCat.json();
+
+                case 11:
+                    category = _context.sent;
+
+                    //console.log(`DATA`, show);
                     console.log('Show data fetched. Count: ' + show.length);
 
+                    console.log('DATA', category);
+
                     return _context.abrupt('return', {
-                        shows: show
+                        shows: show,
+                        categories: category
                     });
 
-                case 9:
+                case 15:
                 case 'end':
                     return _context.stop();
             }
