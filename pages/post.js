@@ -39,6 +39,47 @@ const style = {
     lineHeight: "70px"
 };
 
+const container = {
+    maxWidth: 1280,
+    margin: "0 auto"
+};
+
+const social_wrapper ={
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between"
+};
+
+const social_text_block = {
+    borderLeft: "1px solid black",
+    background: "#ccc",
+    maxWidth: 780
+};
+
+const social_text = {
+    margin: 0,
+    fontSize: 35,
+    padding: "0 0 0 40px"
+};
+
+const social_links_block = {
+    background: "antiquewhite",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center"
+};
+
+const social_links = {
+    marginLeft: 15,
+    marginRight: 15,
+    width: 50,
+    height: 50,
+    background: "aquamarine",
+    textAlign: "center"
+};
+
+
 const Post = (props) => (
     <Layout>
         {props.shows &&
@@ -50,12 +91,46 @@ const Post = (props) => (
                     <span style={style}>{props.shows.title.rendered}</span>
                 </div>
             </div>
+            <div style={container}>
+                <div style={social_wrapper}>
+                    <div style={social_text_block}>
+                        <p style={social_text}>The success of a project-based business largely  depends on the visibility the company has over its projects</p>
+                    </div>
+                    <div style={social_links_block}>
+                        <div style={social_links}>some link</div>
+                        <div style={social_links}>some link</div>
+                        <div style={social_links}>some link</div>
+                        <div style={social_links}>some link</div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>
+                            The current level of their performance and, of course, the factors influencing their health and success.That is why the ability to have an extensive picture of the way these factors interact with one another is totally essential.
+                        </p>
+                        <ul>
+                            <li>
+                                Projects managers put lots of effort into evaluating project succsess and making sure that each of their projects is on track.
+                            </li>
+                            <li>
+                                They need to analyze,predict,and prevent any possible
+                            </li>
+                            <li>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
 
 
 
 
 
-            <div dangerouslySetInnerHTML={{ __html: props.shows.content.rendered }}/>
+                <div dangerouslySetInnerHTML={{ __html: props.shows.content.rendered }}/>
+            </div>
         </div>
         }
     </Layout>
