@@ -2,7 +2,7 @@ import Layout from '../components/MyLayout'
 import Search from '../components/Search'
 import Banner from '../components/Banner'
 import Search_title from '../components/Search_title'
-import Show_more from '../components/show_more'
+import Show_more from '../components/Show_more'
 
 import Masonry from 'react-masonry-component';
 import Link from 'next/link'
