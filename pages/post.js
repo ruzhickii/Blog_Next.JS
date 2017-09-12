@@ -5,6 +5,7 @@ import Post_widget from '../components/Post_widget'
 import User_widget from '../components/User_widget'
 
 import fetch from 'isomorphic-unfetch'
+import Link from 'next/link'
 
 const img_block = {
     position: "relative"
@@ -143,8 +144,8 @@ const text_6 = {
 
 const text_7 = {
     fontSize: 20,
-textIndent: 20,
-display: "inline-block"
+    textIndent: 20,
+    display: "inline-block"
 };
 
 const text_8 = {
@@ -153,7 +154,32 @@ const text_8 = {
 };
 
 const points = {
-  fontFamily: "ProximaNovaCondensedSemibold"
+    fontFamily: "ProximaNovaCondensedSemibold"
+};
+
+const comments_block = {
+    width: "100%",
+    background: "#000",
+    color: "#fff",
+    textAlign: "center",
+    height: 400,
+    margin: "20px 0 20px 0px",
+    fontSize: 100
+};
+
+const small_post_wrapper = {
+    display: "flex",
+    padding: "40px 100px 50px 100px"
+};
+
+const small_card = {
+    maxWidth: "33.3%",
+    position: "relative",
+    background: "#ccc"
+};
+
+const small_img = {
+    width: "100%"
 };
 
 
@@ -168,7 +194,7 @@ function getCategory(categories, id) {
 function getColor(slug) {
     const style = Object.assign({}, article_name);
     style.background = colors[slug];
-    console.log(style, "ARTICLE NAME", slug);
+    // console.log(style, "ARTICLE NAME", slug);
     return style;
 }
 
@@ -259,18 +285,49 @@ BI system.How to get an extensive picture of the project’s overall performance
                         <Post_widget />
                     </div>
                 </div>
+                <div style={comments_block}>
+                    SOME COMMENTS
+                </div>
                 <Social_links_colored />
-                <div dangerouslySetInnerHTML={{ __html: props.shows.content.rendered }}/>
             </div>
+            <div style={small_post_wrapper}>
+                    {props.randomPosts && props.randomPosts.map((post) => (
+                        <div style={small_card} key={post.id}>
+                                <Link as={`/p/${post.id}`} href={`/post?id=${post.id}`}>
+                                <a>
+                                    <img style={small_img} src={post.better_featured_image.source_url}/>
+                                    <div style={getColor(getCategory(props.categories, props.shows.categories[0]))} dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}/>
+                                </a>
+                            </Link>
+                        </div>
+                    ))}
+            </div>
+            <div>BUTTON UP</div>
+            <div dangerouslySetInnerHTML={{ __html: props.shows.content.rendered }}/>
         </div>
         }
     </Layout>
 );
 
 Post.getInitialProps = async function({query}) {
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     const {id} = query;
     const res = await fetch(`http://localhost/wordpress/wp-json/wp/v2/posts/${id}`);
     const show = await res.json();
+
+
+    const posts = await fetch('http://localhost/wordpress/wp-json/wp/v2/posts/');
+    const resPosts = await posts.json();
+    const randomPosts = [];
+    for (let i = 1; i <= 3; i += 1) {
+        randomPosts.push(resPosts[getRandomInt(0, resPosts.length - 1)]);
+    }
+
+    console.log(randomPosts);
 
 
     const resCat = await fetch('http://localhost/wordpress/wp-json/wp/v2/categories/');
@@ -278,7 +335,8 @@ Post.getInitialProps = async function({query}) {
 
     return {
         shows: show,
-        categories: category
+        categories: category,
+        randomPosts: randomPosts
     }
 };
 

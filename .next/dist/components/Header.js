@@ -18,7 +18,7 @@ var _Logo_header2 = _interopRequireDefault(_Logo_header);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = 'C:\\Users\\ruzhi\\WebstormProjects\\Blog_Next.JS\\components\\Header.js';
+var _jsxFileName = '/mnt/c/Users/ruzhi/WebstormProjects/Blog_Next.JS/components/Header.js';
 
 
 var headerStyle = {

@@ -28,13 +28,13 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _document = require("next\\dist\\server\\document.js");
+var _document = require("next/dist/server/document.js");
 
 var _document2 = _interopRequireDefault(_document);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = "C:\\Users\\ruzhi\\WebstormProjects\\Blog_Next.JS\\pages\\_document.js?entry";
+var _jsxFileName = "/mnt/c/Users/ruzhi/WebstormProjects/Blog_Next.JS/pages/_document.js?entry";
 
 
 var body = {

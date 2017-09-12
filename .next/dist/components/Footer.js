@@ -18,7 +18,7 @@ var _Logo_footer2 = _interopRequireDefault(_Logo_footer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = 'C:\\Users\\ruzhi\\WebstormProjects\\Blog_Next.JS\\components\\Footer.js';
+var _jsxFileName = '/mnt/c/Users/ruzhi/WebstormProjects/Blog_Next.JS/components/Footer.js';
 
 
 var footerStyle = {

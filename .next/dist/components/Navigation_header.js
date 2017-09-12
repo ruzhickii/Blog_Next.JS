@@ -8,13 +8,13 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _link = require("next\\dist\\lib\\link.js");
+var _link = require("next/dist/lib/link.js");
 
 var _link2 = _interopRequireDefault(_link);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = "C:\\Users\\ruzhi\\WebstormProjects\\Blog_Next.JS\\components\\Navigation_header.js";
+var _jsxFileName = "/mnt/c/Users/ruzhi/WebstormProjects/Blog_Next.JS/components/Navigation_header.js";
 
 
 var nav = {

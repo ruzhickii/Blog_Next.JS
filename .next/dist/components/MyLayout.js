@@ -18,7 +18,7 @@ var _Footer2 = _interopRequireDefault(_Footer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = 'C:\\Users\\ruzhi\\WebstormProjects\\Blog_Next.JS\\components\\MyLayout.js';
+var _jsxFileName = '/mnt/c/Users/ruzhi/WebstormProjects/Blog_Next.JS/components/MyLayout.js';
 
 
 var Layout = function Layout(props) {

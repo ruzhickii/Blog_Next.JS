@@ -121,7 +121,7 @@ Index.getInitialProps = async function() {
     const resCat = await fetch('http://localhost/wordpress/wp-json/wp/v2/categories/');
     const category = await resCat.json();
 
-    //console.log(`DATA`, show);
+
     console.log(`Show data fetched. Count: ${show.length}`);
 
     console.log('DATA', category);
