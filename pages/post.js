@@ -3,9 +3,12 @@ import Info_social_links from '../components/Info_social_links'
 import Social_links_colored from '../components/Social_links_colored'
 import Post_widget from '../components/Post_widget'
 import User_widget from '../components/User_widget'
+import Posts_small from '../components/Posts_small'
+import Up_button from '../components/Up_button'
+
 
 import fetch from 'isomorphic-unfetch'
-import Link from 'next/link'
+
 
 const img_block = {
     position: "relative"
@@ -167,20 +170,7 @@ const comments_block = {
     fontSize: 100
 };
 
-const small_post_wrapper = {
-    display: "flex",
-    padding: "40px 100px 50px 100px"
-};
 
-const small_card = {
-    maxWidth: "33.3%",
-    position: "relative",
-    background: "#ccc"
-};
-
-const small_img = {
-    width: "100%"
-};
 
 
 function getCategory(categories, id) {
@@ -290,27 +280,18 @@ BI system.How to get an extensive picture of the project’s overall performance
                 </div>
                 <Social_links_colored />
             </div>
-            <div style={small_post_wrapper}>
-                    {props.randomPosts && props.randomPosts.map((post) => (
-                        <div style={small_card} key={post.id}>
-                                <Link as={`/p/${post.id}`} href={`/post?id=${post.id}`}>
-                                <a>
-                                    <img style={small_img} src={post.better_featured_image.source_url}/>
-                                    <div style={getColor(getCategory(props.categories, props.shows.categories[0]))} dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}/>
-                                </a>
-                            </Link>
-                        </div>
-                    ))}
-            </div>
-            <div>BUTTON UP</div>
-            <div dangerouslySetInnerHTML={{ __html: props.shows.content.rendered }}/>
+            <Posts_small posts={props.randomPosts} categories={props.categories}/>
+            <Up_button />
+            {/*<a style={up_block} href="#">*/}
+                {/*<img style={up_img} src="/static/up.jpg" alt="arrow"/>*/}
+            {/*</a>*/}
+            {/*<div dangerouslySetInnerHTML={{ __html: props.shows.content.rendered }}/>*/}
         </div>
         }
     </Layout>
 );
 
 Post.getInitialProps = async function({query}) {
-
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
@@ -323,11 +304,23 @@ Post.getInitialProps = async function({query}) {
     const posts = await fetch('http://localhost/wordpress/wp-json/wp/v2/posts/');
     const resPosts = await posts.json();
     const randomPosts = [];
+    const randomInt = [];
     for (let i = 1; i <= 3; i += 1) {
-        randomPosts.push(resPosts[getRandomInt(0, resPosts.length - 1)]);
+        const num = getRandomInt(0, resPosts.length - 1);
+        function setPost(num) {
+            if (!randomInt.includes(num)) {
+                randomInt.push(num);
+                randomPosts.push(resPosts[num]);
+            } else {
+                setPost(getRandomInt(0, resPosts.length - 1));
+            }
+        }
+
+        setPost(num);
     }
 
-    console.log(randomPosts);
+
+    console.log(show);
 
 
     const resCat = await fetch('http://localhost/wordpress/wp-json/wp/v2/categories/');
