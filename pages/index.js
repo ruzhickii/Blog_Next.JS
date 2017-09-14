@@ -13,7 +13,6 @@ const container = {
     margin: "0 auto"
 };
 
-
 const Index = (props) => (
 
     <Layout>

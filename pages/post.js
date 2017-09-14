@@ -7,6 +7,7 @@ import Posts_small from '../components/Posts_small'
 import Up_button from '../components/Up_button'
 
 
+
 import fetch from 'isomorphic-unfetch'
 
 
@@ -282,10 +283,6 @@ BI system.How to get an extensive picture of the project’s overall performance
             </div>
             <Posts_small posts={props.randomPosts} categories={props.categories}/>
             <Up_button />
-            {/*<a style={up_block} href="#">*/}
-                {/*<img style={up_img} src="/static/up.jpg" alt="arrow"/>*/}
-            {/*</a>*/}
-            {/*<div dangerouslySetInnerHTML={{ __html: props.shows.content.rendered }}/>*/}
         </div>
         }
     </Layout>

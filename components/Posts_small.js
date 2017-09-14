@@ -1,8 +1,8 @@
-import User_widget_small from "../components/User_widget_small"
+import User_widget from "../components/User_widget"
 
 import Link from 'next/link'
 
-const small_post_wrapper = {
+const post_wrapper_small = {
     display: "flex",
     padding: "40px 100px 50px 100px"
 };
@@ -68,12 +68,12 @@ function getCategory(categories, id) {
 function getColor(slug) {
     const style = Object.assign({}, article_name);
     style.background = colors[slug];
-    // console.log(style, "ARTICLE NAME", slug);
+    console.log(style, "ARTICLE NAME", slug);
     return style;
 }
 
 const Posts_small = (props) => (
-    <div style={small_post_wrapper}>
+    <div style={post_wrapper_small}>
         {props.posts && props.posts.map((post) => (
             <div style={small_card} key={post.id}>
                 <Link as={`/p/${post.id}`} href={`/post?id=${post.id}`}>
@@ -83,7 +83,7 @@ const Posts_small = (props) => (
                         <div>
                             <span style={post_name}>{post.title.rendered}</span>
                         </div>
-                        <User_widget_small />
+                        <User_widget small={true} />
                     </a>
                 </Link>
             </div>

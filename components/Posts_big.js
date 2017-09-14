@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Masonry from 'react-masonry-component';
 
-
 const img = {
     width: "100%",
     display: "block",
