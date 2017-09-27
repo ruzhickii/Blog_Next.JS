@@ -8,27 +8,27 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Navigation_footer = require('./Navigation_footer');
+var _NavigationFooter = require('./NavigationFooter');
 
-var _Navigation_footer2 = _interopRequireDefault(_Navigation_footer);
+var _NavigationFooter2 = _interopRequireDefault(_NavigationFooter);
 
-var _Logo_footer = require('./Logo_footer');
+var _LogoFooter = require('./LogoFooter');
 
-var _Logo_footer2 = _interopRequireDefault(_Logo_footer);
+var _LogoFooter2 = _interopRequireDefault(_LogoFooter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = '/mnt/c/Users/ruzhi/WebstormProjects/Blog_Next.JS/components/Footer.js';
+var _jsxFileName = 'C:\\Users\\ruzhi\\WebstormProjects\\Blog_Next.JS\\components\\Footer.js';
 
 
 var footerStyle = {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    width: "100%",
-    background: "#000",
-    fontFamily: "Roboto",
-    padding: "0 0 25px 0"
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    background: '#000',
+    fontFamily: 'Roboto',
+    padding: '0 0 25px 0'
 };
 
 var Footer = function Footer(props) {
@@ -36,12 +36,12 @@ var Footer = function Footer(props) {
             fileName: _jsxFileName,
             lineNumber: 15
         }
-    }, _react2.default.createElement(_Logo_footer2.default, {
+    }, _react2.default.createElement(_LogoFooter2.default, {
         __source: {
             fileName: _jsxFileName,
             lineNumber: 16
         }
-    }), _react2.default.createElement(_Navigation_footer2.default, {
+    }), _react2.default.createElement(_NavigationFooter2.default, {
         __source: {
             fileName: _jsxFileName,
             lineNumber: 17

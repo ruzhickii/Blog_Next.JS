@@ -43,7 +43,7 @@ var _document2 = _interopRequireDefault(_document);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = "/mnt/c/Users/ruzhi/WebstormProjects/Blog_Next.JS/pages/_document.js?entry";
+var _jsxFileName = 'C:\\Users\\ruzhi\\WebstormProjects\\Blog_Next.JS\\pages\\_document.js?entry';
 
 
 var body = {
@@ -60,9 +60,9 @@ var MyDocument = function (_Document) {
     }
 
     (0, _createClass3.default)(MyDocument, [{
-        key: "render",
+        key: 'render',
         value: function render() {
-            return _react2.default.createElement("html", {
+            return _react2.default.createElement('html', {
                 __source: {
                     fileName: _jsxFileName,
                     lineNumber: 10
@@ -72,28 +72,28 @@ var MyDocument = function (_Document) {
                     fileName: _jsxFileName,
                     lineNumber: 11
                 }
-            }, _react2.default.createElement("title", {
+            }, _react2.default.createElement('title', {
                 __source: {
                     fileName: _jsxFileName,
                     lineNumber: 12
                 }
-            }, "My page"), _react2.default.createElement("link", { href: "/static/styles.css", rel: "stylesheet", __source: {
+            }, 'My page'), _react2.default.createElement('link', { href: '/static/styles.css', rel: 'stylesheet', __source: {
                     fileName: _jsxFileName,
                     lineNumber: 13
                 }
-            }), _react2.default.createElement("link", { href: "https://fonts.googleapis.com/css?family=Lato", rel: "stylesheet", __source: {
+            }), _react2.default.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Lato', rel: 'stylesheet', __source: {
                     fileName: _jsxFileName,
                     lineNumber: 14
                 }
-            }), _react2.default.createElement("link", { href: "https://fonts.googleapis.com/css?family=Open+Sans:600", rel: "stylesheet", __source: {
+            }), _react2.default.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Open+Sans:700', rel: 'stylesheet', __source: {
                     fileName: _jsxFileName,
                     lineNumber: 15
                 }
-            })), _react2.default.createElement("body", { style: body, __source: {
+            })), _react2.default.createElement('body', { style: body, __source: {
                     fileName: _jsxFileName,
                     lineNumber: 17
                 }
-            }, _react2.default.createElement("div", { className: "root", __source: {
+            }, _react2.default.createElement('div', { className: 'root', __source: {
                     fileName: _jsxFileName,
                     lineNumber: 18
                 }
@@ -116,7 +116,7 @@ var MyDocument = function (_Document) {
 
 exports.default = MyDocument;
 
- ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "/mnt/c/Users/ruzhi/WebstormProjects/Blog_Next.JS/pages/_document.js"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "/mnt/c/Users/ruzhi/WebstormProjects/Blog_Next.JS/pages/_document.js"); } } })();
+ ;(function register() { /* react-hot-loader/webpack */ if (true) { if (typeof __REACT_HOT_LOADER__ === 'undefined') { return; } if (typeof module.exports === 'function') { __REACT_HOT_LOADER__.register(module.exports, 'module.exports', "C:\\Users\\ruzhi\\WebstormProjects\\Blog_Next.JS\\pages\\_document.js"); return; } for (var key in module.exports) { if (!Object.prototype.hasOwnProperty.call(module.exports, key)) { continue; } var namedExport = void 0; try { namedExport = module.exports[key]; } catch (err) { continue; } __REACT_HOT_LOADER__.register(namedExport, key, "C:\\Users\\ruzhi\\WebstormProjects\\Blog_Next.JS\\pages\\_document.js"); } } })();
     (function (Component, route) {
       if (false) return
       if (false) return
@@ -153,7 +153,7 @@ module.exports = __webpack_require__(237);
 /***/ })
 
 },[549]);
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYnVuZGxlcy9wYWdlcy9fZG9jdW1lbnQuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9wYWdlcy9fZG9jdW1lbnQuanM/MDllMDZlYiJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgRG9jdW1lbnQsIHsgSGVhZCwgTWFpbiwgTmV4dFNjcmlwdCB9IGZyb20gJ25leHQvZG9jdW1lbnQnXG5cbmNvbnN0IGJvZHkgPSB7XG4gICAgbWFyZ2luOiAwXG59O1xuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBNeURvY3VtZW50IGV4dGVuZHMgRG9jdW1lbnQge1xuICAgIHJlbmRlciAoKSB7XG4gICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8aHRtbD5cbiAgICAgICAgICAgIDxIZWFkPlxuICAgICAgICAgICAgICAgIDx0aXRsZT5NeSBwYWdlPC90aXRsZT5cbiAgICAgICAgICAgICAgICA8bGluayBocmVmPVwiL3N0YXRpYy9zdHlsZXMuY3NzXCIgcmVsPVwic3R5bGVzaGVldFwiIC8+XG4gICAgICAgICAgICAgICAgPGxpbmsgaHJlZj1cImh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1MYXRvXCIgcmVsPVwic3R5bGVzaGVldFwiLz5cbiAgICAgICAgICAgICAgICA8bGluayBocmVmPVwiaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PU9wZW4rU2Fuczo2MDBcIiByZWw9XCJzdHlsZXNoZWV0XCIvPlxuICAgICAgICAgICAgPC9IZWFkPlxuICAgICAgICAgICAgPGJvZHkgc3R5bGU9e2JvZHl9PlxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9J3Jvb3QnPlxuICAgICAgICAgICAgICAgIDxNYWluIC8+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDxOZXh0U2NyaXB0IC8+XG4gICAgICAgICAgICA8L2JvZHk+XG4gICAgICAgICAgICA8L2h0bWw+XG4gICAgICAgIClcbiAgICB9XG59XG5cblxuLy8gV0VCUEFDSyBGT09URVIgLy9cbi8vIC4vcGFnZXMvX2RvY3VtZW50LmpzP2VudHJ5Il0sIm1hcHBpbmdzIjoiO0E7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQ0E7Ozs7Ozs7O0FBQ0E7QUFDQTtBQUFBO0FBQ0E7QUFFQTs7Ozs7Ozs7Ozs7QUFFQTtBQUNBOztBQUFBO0FBQ0E7QUFEQTtBQUFBOztBQUNBO0FBQ0E7QUFEQTtBQUFBOztBQUNBO0FBQUE7QUFBQTtBQUFBO0FBQ0E7QUFDQTtBQURBO0FBQ0E7QUFBQTtBQUNBO0FBREE7QUFDQTtBQUFBO0FBRUE7QUFGQTtBQUVBO0FBQUE7QUFDQTtBQURBO0FBQ0E7QUFBQTtBQUNBO0FBREE7QUFDQTs7QUFBQTtBQUVBO0FBRkE7QUFBQTs7QUFFQTtBQUlBO0FBSkE7QUFBQTs7Ozs7QUFkQTtBQUNBO0FBREE7QUFDQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBIiwic291cmNlUm9vdCI6IiJ9
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYnVuZGxlc1xccGFnZXNcXF9kb2N1bWVudC5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3BhZ2VzL19kb2N1bWVudC5qcz8yNzI5NDM0Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBEb2N1bWVudCwgeyBIZWFkLCBNYWluLCBOZXh0U2NyaXB0IH0gZnJvbSAnbmV4dC9kb2N1bWVudCc7XHJcblxyXG5jb25zdCBib2R5ID0ge1xyXG4gICAgbWFyZ2luOiAwXHJcbn07XHJcblxyXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBNeURvY3VtZW50IGV4dGVuZHMgRG9jdW1lbnQge1xyXG4gICAgcmVuZGVyICgpIHtcclxuICAgICAgICByZXR1cm4gKFxyXG4gICAgICAgICAgICA8aHRtbD5cclxuICAgICAgICAgICAgICAgIDxIZWFkPlxyXG4gICAgICAgICAgICAgICAgICAgIDx0aXRsZT5NeSBwYWdlPC90aXRsZT5cclxuICAgICAgICAgICAgICAgICAgICA8bGluayBocmVmPScvc3RhdGljL3N0eWxlcy5jc3MnIHJlbD0nc3R5bGVzaGVldCcgLz5cclxuICAgICAgICAgICAgICAgICAgICA8bGluayBocmVmPSdodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9TGF0bycgcmVsPSdzdHlsZXNoZWV0JyAvPlxyXG4gICAgICAgICAgICAgICAgICAgIDxsaW5rIGhyZWY9J2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1PcGVuK1NhbnM6NzAwJyByZWw9J3N0eWxlc2hlZXQnIC8+XHJcbiAgICAgICAgICAgICAgICA8L0hlYWQ+XHJcbiAgICAgICAgICAgICAgICA8Ym9keSBzdHlsZT17Ym9keX0+XHJcbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9J3Jvb3QnPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8TWFpbiAvPlxyXG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgICAgIDxOZXh0U2NyaXB0IC8+XHJcbiAgICAgICAgICAgICAgICA8L2JvZHk+XHJcbiAgICAgICAgICAgIDwvaHRtbD5cclxuICAgICAgICApO1xyXG4gICAgfVxyXG59XHJcblxuXG5cbi8vIFdFQlBBQ0sgRk9PVEVSIC8vXG4vLyAuL3BhZ2VzL19kb2N1bWVudC5qcz9lbnRyeSJdLCJtYXBwaW5ncyI6IjtBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUNBOzs7Ozs7OztBQUNBO0FBQ0E7QUFBQTtBQUNBO0FBRUE7Ozs7Ozs7Ozs7O0FBRUE7QUFDQTs7QUFBQTtBQUNBO0FBREE7QUFBQTs7QUFDQTtBQUNBO0FBREE7QUFBQTs7QUFDQTtBQUFBO0FBQUE7QUFBQTtBQUNBO0FBQ0E7QUFEQTtBQUNBO0FBQUE7QUFDQTtBQURBO0FBQ0E7QUFBQTtBQUVBO0FBRkE7QUFFQTtBQUFBO0FBQ0E7QUFEQTtBQUNBO0FBQUE7QUFDQTtBQURBO0FBQ0E7O0FBQUE7QUFFQTtBQUZBO0FBQUE7O0FBRUE7QUFJQTtBQUpBO0FBQUE7Ozs7O0FBZEE7QUFDQTtBQURBO0FBQ0E7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QSIsInNvdXJjZVJvb3QiOiIifQ==
             return { page: comp.default }
           })
         
