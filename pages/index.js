@@ -1,5 +1,7 @@
-import React from 'react';
-//import { DevTools } from '../utils/index';
+import React, { Component } from 'react';
+import {makeStore} from '../store/index';
+import wrapper from './wrapper';
+import Link from 'next/link';
 
 import Layout from '../components/MyLayout';
 import Search from '../components/Search';
@@ -15,18 +17,47 @@ const container = {
     margin: '0 auto'
 };
 
-const Index = (props) => (
-    <Layout>
-        {/*{ process.env.NODE_ENV !== 'production' ? <DevTools /> : null }*/}
-        <Banner />
-        <SearchTitle />
-        <div style={container}>
-            <Search />
-            <PostsBig shows={props.shows} categories={props.categories} />
-            <ShowMore />
-        </div>
-    </Layout>
-);
+class Index extends Component {
+    static getInitialProps ({ store, isServer, pathname, query }) {
+        console.log(Index.name, '- 2. Cmp.getInitialProps uses the store to dispatch things, pathname', pathname, 'query', query);
+
+        // If it's a server, then all async actions must be done before return or return a promise
+        if (isServer) {
+            return new Promise((res) => {
+                setTimeout(() => {
+                    store.dispatch({type: 'TICK', payload: 'server'});
+                    res({custom: 'custom server'});
+                }, 200);
+            });
+        }
+
+        // If it's a client, then it does not matter because client can be progressively rendered
+        store.dispatch({type: 'TICK', payload: 'client'});
+
+        return {custom: 'custom client'};
+    }
+
+    render () {
+        return (
+            <Layout>
+                <Banner />
+                <SearchTitle />
+                <div style={container}>
+                    <Search />
+                    <PostsBig shows={this.props.shows} categories={this.props.categories} />
+                    <ShowMore />
+
+                    <section>
+                        <div>Redux tick: {this.props.tick} (this page)</div>
+                        <div>Custom: {this.props.custom}</div>
+                        <Link href='/other'><a>Navigate</a></Link>
+                    </section>
+
+                </div>
+            </Layout>
+        );
+    }
+}
 
 Index.getInitialProps = async function () {
     const res = await fetch('http://localhost/wordpress/wp-json/wp/v2/posts/');
@@ -37,12 +68,14 @@ Index.getInitialProps = async function () {
 
     console.log(`Show data fetched. Count: ${show.length}`);
 
-    console.log('DATA', category);
+    console.log('DATA !!!', category);
 
     return {
         shows: show,
         categories: category
     };
 };
+
+Index = wrapper(makeStore, state => state)(Index);
 
 export default Index;

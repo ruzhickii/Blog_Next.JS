@@ -1,20 +1,16 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import rootReducer from '../reducers/index';
-import { DevTools } from '../utils/index';
+import {createStore} from 'redux';
 
-function _applyMiddleware() {
-    const middleware = [
+export const reducer = (state = {tick: 'init', tack: 'init'}, action) => {
+    switch (action.type) {
+    case 'TICK':
+        return {...state, tick: action.payload};
+    case 'TACK':
+        return {...state, tack: action.payload};
+    default:
+        return state;
+    }
+};
 
-    ];
-
-    return applyMiddleware(...middleware);
-}
-
-export default function configureStore (initialState) {
-    const store = compose(
-        _applyMiddleware(),
-        DevTools.instrument()
-    )(createStore)(rootReducer, initialState);
-
-    return store;
-}
+export const makeStore = (initialState) => {
+    return createStore(reducer, initialState);
+};
