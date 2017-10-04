@@ -1,23 +1,39 @@
 import UserWidget from './UserWidget';
+import styled from 'styled-components';
 
 import Link from 'next/link';
 
-const postWrapperSmall = {
-    display: 'flex',
-    padding: '40px 100px 50px 100px'
-};
+const PostWrapperSmall = styled.div`
+    display: flex;
+    padding: 40px 100px 50px 100px;
+`;
 
-const smallCard = {
-    maxWidth: '33.3%',
-    maxHeight: 300,
-    position: 'relative',
-    background: '#ccc',
-    overflow: 'hidden'
-};
+const SmallCard = styled.div`
+    max-width: 33.3%;
+    max-height: 300px;
+    position: relative;
+    background: #ccc;
+    overflow: hidden;
+`;
 
-const smallImg = {
-    width: '100%'
-};
+const SmallImg = styled.img`
+    width: 100%;
+`;
+
+const PostName = styled.span`
+    position: absolute;
+    top: 135px;
+    color: #fff;
+    font-size: 35px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 235px;
+    text-align: center;
+    border-left: 1px solid #fff;
+    line-height: 30px;
+    font-family: ProximaNovaSemibold;
+`;
 
 const colors = {
     backend: '#fbaf5d',
@@ -41,21 +57,6 @@ const articleName = {
     color: '#fff'
 };
 
-const postName = {
-    position: 'absolute',
-    top: '135',
-    color: '#fff',
-    fontSize: 35,
-    left: 0,
-    right: 0,
-    margin: '0 auto',
-    maxWidth: 235,
-    textAlign: 'center',
-    borderLeft: '1px solid #fff',
-    lineHeight: '30px',
-    fontFamily: 'ProximaNovaSemibold'
-};
-
 function getCategory (categories, id) {
     const category = categories.find(item => {
         return item.id === id;
@@ -72,23 +73,23 @@ function getColor (slug) {
 }
 
 const PostsSmall = (props) => (
-    <div style={postWrapperSmall}>
+    <PostWrapperSmall>
         {props.posts && props.posts.map((post) => (
-            <div style={smallCard} key={post.id}>
+            <SmallCard key={post.id}>
                 <Link as={`/p/${post.id}`} href={`/post?id=${post.id}`}>
-                    <a>
-                        <img style={smallImg} src={post.better_featured_image.source_url} />
-                        <div className='small_category' style={getColor(getCategory(props.categories, post.categories[0]))}
+                    <span>
+                        <SmallImg src={post.better_featured_image.source_url} />
+                        <div style={getColor(getCategory(props.categories, post.categories[0]))}
                           dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
                         <div>
-                            <span style={postName}>{post.title.rendered}</span>
+                            <PostName>{post.title.rendered}</PostName>
                         </div>
                         <UserWidget small={true} />
-                    </a>
+                    </span>
                 </Link>
-            </div>
+            </SmallCard>
         ))}
-    </div>
+    </PostWrapperSmall>
 );
 
 export default PostsSmall;

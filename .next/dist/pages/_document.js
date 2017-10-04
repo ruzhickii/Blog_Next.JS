@@ -80,23 +80,27 @@ var MyDocument = function (_Document) {
                     fileName: _jsxFileName,
                     lineNumber: 15
                 }
+            }), _react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0', __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 16
+                }
             })), _react2.default.createElement('body', { style: body, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 17
+                    lineNumber: 18
                 }
             }, _react2.default.createElement('div', { className: 'root', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 18
+                    lineNumber: 19
                 }
             }, _react2.default.createElement(_document.Main, {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 19
+                    lineNumber: 20
                 }
             })), _react2.default.createElement(_document.NextScript, {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 21
+                    lineNumber: 22
                 }
             })));
         }

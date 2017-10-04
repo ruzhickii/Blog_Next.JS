@@ -1,3 +1,7 @@
+import styled from 'styled-components';
+
+// TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 const user = {
     position: 'absolute',
     bottom: 50,

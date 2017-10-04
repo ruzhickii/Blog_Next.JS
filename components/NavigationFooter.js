@@ -1,49 +1,90 @@
 import Link from 'next/link';
+import styled from 'styled-components';
 
-const blockLinkStyle = {
-    margin: 0,
-    padding: '0 60px 0 0px'
-};
+const BlockLinkStyle = styled.div`
+    margin: 0;  
+    padding: 0 60px 0 0;
 
-const ulStyles = {
-    display: 'flex',
-    flexDirection: 'row',
-    listStyleType: 'none',
-    margin: '0 0 20px 0',
-    justifyContent: 'flex-end'
-};
+        @media (max-width: 922px) {
+            padding: 0 30px 0 0;
+        }
 
-const aStyles = {
-    textDecoration: 'none',
-    color: '#fff',
-    fontFamily: 'Roboto',
-    display: 'flex',
-    alignItems: 'center',
-    height: '100%',
-    padding: 10,
-    textTransform: 'uppercase'
-};
+        @media (min-width: 786px) and (max-width: 922px) {
 
-const copyright = {
-    color: '#fff'
-};
+        }
+
+        @media (min-width: 640px) and (max-width: 780px) {
+            padding: 0 48px 0 0;
+            line-height: 0;
+        }
+
+        @media (min-width: 320px) and (max-width: 635px) {
+            padding: 0;
+            
+        }
+`;
+
+const Ul = styled.ul`
+    display: flex;
+    flex-direction: row;
+    list-styleType: none;
+    margin: 0 0 20px 0;
+    justify-content: flex-end;
+
+        @media (max-width: 922px) {
+            margin: 0 0 40px 0;
+        }
+
+        @media (min-width: 786px) and (max-width: 922px) {
+           
+        }
+
+        @media (min-width: 640px) and (max-width: 786px) {
+           
+        }
+
+        @media (min-width: 320px) and (max-width: 640px) {
+            padding: 0;
+            margin: 0 0 10px 0;
+        }
+`;
+
+const Pages = styled.div`
+    text-decoration: none;
+    color: #fff;
+    font-family: Roboto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+        @media (min-width: 320px) and (max-width: 640px) {
+            height: 50%;
+        }
+`;
 
 const Navigation = () => (
-    <div style={blockLinkStyle}>
-        <ul style={ulStyles}>
+    <BlockLinkStyle>
+        <Ul>
             <li>
-                <Link href='/about_us'>
-                    <a style={aStyles}>about us</a>
+                <Link href='/'>
+                    <Pages>home</Pages>
                 </Link>
             </li>
             <li>
                 <Link href='/technologies'>
-                    <a style={aStyles}>technologies</a>
+                    <Pages>technologies</Pages>
                 </Link>
             </li>
-        </ul>
-        <span style={copyright}>© PerceptionBox, Custom Software Development Company. All rights reserved.</span>
-    </div>
+            <li>
+                <Link href='/aboutUs'>
+                    <Pages>about us</Pages>
+                </Link>
+            </li>
+        </Ul>
+    </BlockLinkStyle>
 );
 
 export default Navigation;

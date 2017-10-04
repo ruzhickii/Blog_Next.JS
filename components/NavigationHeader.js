@@ -1,72 +1,91 @@
 import Link from 'next/link';
+import styled from 'styled-components';
 
-const nav = {
-    margin: 0,
-    height: '100%'
-};
+const Nav = styled.div`
+    margin: 0;
+    height: 100%;
 
-const navigation = {
-    height: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'row',
-    listStyleType: 'none'
-};
+        @media (max-width: 923px) {
+            display: none;
+        }
 
-const navigationItem = {
-    position: 'relative',
-    height: '100%',
-    padding: '5px 0',
-    margin: '0 3px',
-    textAlign: 'center'
-};
+        @media (max-width: 768px) {
+            display: none;
+        }
 
-const headerLink = {
-    textDecoration: 'none',
-    color: '#4a5269',
-    fontFamily: 'Roboto',
-    display: 'flex',
-    alignItems: 'center',
-    height: '100%',
-    padding: '10px'
-};
+        @media (max-width: 640px) {
+            display: none;
+        }
 
-const connectLink = {
-    background: '#0a2954',
-    color: '#fff',
-    borderRadius: '5px',
-    border: '1px solid transparent',
-    transition: 'all 0.5s',
-    padding: '10px',
-    textDecoration: 'none',
-    fontFamily: 'Roboto'
-};
+        @media (max-width: 320px) {
+            display: none;
+        }
+`;
+
+const UlNavigation = styled.ul`
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    list-style-type: none;
+`;
+
+const NavigationItem = styled.li`
+    position: relative;
+    height: 100%;
+    padding: 5px 0;
+    margin: 0 3px;
+    text-align: center;
+`;
+
+const HeaderLink = styled.span`
+    text-decoration: none;
+    color: #4a5269;
+    font-family: Roboto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+    cursor: pointer;
+`;
+
+const ConnectLink = styled.span`
+    background: #0a2954;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: all 0.5s;
+    padding: 10px;
+    text-decoration: none;
+    font-family: Roboto;
+    cursor: pointer;
+`;
 
 const Navigation = () => (
-    <div style={nav}>
-        <ul style={navigation}>
-            <li style={navigationItem}>
+    <Nav>
+        <UlNavigation>
+            <NavigationItem>
                 <Link href='/'>
-                    <a style={headerLink} href='#'>HOME</a>
+                    <HeaderLink>HOME</HeaderLink>
                 </Link>
-            </li>
-            <li style={navigationItem}>
+            </NavigationItem>
+            <NavigationItem>
                 <Link href='/technologies'>
-                    <a style={headerLink} href='#'>TECHNOLOGIES</a>
+                    <HeaderLink>TECHNOLOGIES</HeaderLink>
                 </Link>
-            </li>
-            <li style={navigationItem}>
+            </NavigationItem>
+            <NavigationItem>
                 <Link href='/aboutUs'>
-                    <a style={headerLink} href='#'>ABOUT US</a>
+                    <HeaderLink>ABOUT US</HeaderLink>
                 </Link>
-            </li>
-            <li style={navigationItem}>
+            </NavigationItem>
+            <NavigationItem>
                 <Link href='/letsTalk'>
-                    <a style={connectLink} href='#'>LET'S TALK!</a>
+                    <ConnectLink>LET'S TALK!</ConnectLink>
                 </Link>
-            </li>
-        </ul>
-    </div>
+            </NavigationItem>
+        </UlNavigation>
+    </Nav>
 );
 
 export default Navigation;

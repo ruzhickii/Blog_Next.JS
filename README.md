@@ -1,2 +1,1 @@
-1.npm run dev - start project
-
+1. npm run dev

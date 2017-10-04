@@ -1,75 +1,62 @@
-const postWidgetWrapper = {
-    background: '#d8dade',
-    maxWidth: 250,
-    padding: 20
-};
+import styled from 'styled-components';
 
-const postWidgetTitleBlock = {
-    borderLeft: '1px solid black'
-};
+const PostWidgetWrapper = styled.div`
+    background: #d8dade;
+    max-width: 250px;
+    padding: 20px;
+`;
 
-const postWidgetTitle = {
-    margin: 0,
-    fontSize: 30,
-    textTransform: 'uppercase',
-    padding: '0 0 0 15px',
-    fontFamily: 'ProximaNovaLight',
-    color: '#292a2c'
-};
+const PostWidgetTitleBlock = styled.div`
+    border-left: 1px solid black;
+`;
 
-const titleWord = {
-    fontFamily: 'ProximaNovaSemibold'
-};
+const PostWidgetTitle = styled.div`
+    margin: 0;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 0 0 0 15px;
+    font-family: ProximaNovaLight;
+    color: #292a2c;
+`;
 
-const p1 = {
-    fontFamily: 'ProximaNovaSemibold',
-    color: '#292a2c'
-};
+const TitleWord = styled.span`
+    font-family: ProximaNovaSemibold;
+`;
 
-const p2 = {
-    fontFamily: 'ProximaNovaSemibold',
-    color: '#cf4f50'
-};
+const P = styled.p`
+        font-family: ProximaNovaSemibold;
+        color: #292a2c;
+`;
 
-const p3 = {
-    fontFamily: 'ProximaNovaSemibold',
-    color: '#292a2c'
-};
-
-const p4 = {
-    fontFamily: 'ProximaNovaSemibold',
-    color: '#292a2c'
-};
-
-const p5 = {
-    fontFamily: 'ProximaNovaSemibold',
-    color: '#292a2c'
-};
+const Active = styled.p`
+    font-family: ProximaNovaSemibold;
+    color: #cf4f50;
+`;
 
 const postWidget = (props) => (
     <div>
-        <div style={postWidgetWrapper}>
-            <div style={postWidgetTitleBlock}>
-                <div style={postWidgetTitle}>
-                    recent <span style={titleWord}>blogs</span>
-                </div>
-            </div>
-            <p style={p1}>
+        <PostWidgetWrapper>
+            <PostWidgetTitleBlock>
+                <PostWidgetTitle>
+                    recent <TitleWord>blogs</TitleWord>
+                </PostWidgetTitle>
+            </PostWidgetTitleBlock>
+            <P>
             Украинский умный держатель для смартфона собрал $125 000 на Kickstarter
-            </p>
-            <p style={p2}>
+            </P>
+            <Active>
             Украинский умный держатель для смартфона собрал $125 000 на Kickstarter
-            </p>
-            <p style={p3}>
+            </Active>
+            <P>
             Украинский умный держатель для смартфона собрал $125 000 на Kickstarter
-            </p>
-            <p style={p4}>
+            </P>
+            <P>
             Украинский умный держатель для смартфона собрал $125 000 на Kickstarter
-            </p>
-            <p style={p5}>
+            </P>
+            <P>
             Украинский умный держатель для смартфона собрал $125 000 на Kickstarter
-            </p>
-        </div>
+            </P>
+        </PostWidgetWrapper>
     </div>
 );
 

@@ -1,108 +1,171 @@
-const inputsWrapper = {
-    boxShadow: '0 0 5px black',
-    borderRadius: 5,
-    display: 'none',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    margin: '60px 0 0 0',
-    padding: '55px 0 55px 0'
-};
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { connect } from 'react-redux';
+import fetch from 'isomorphic-unfetch';
 
-const tagNameInput = {
-    maxWidth: 465,
-    height: 95,
-    textAlign: 'center',
-    color: '#778094',
-    fontFamily: 'Roboto',
-    fontSize: 45,
-    fontWeight: 400,
-    textTransform: 'uppercase',
-    boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.45)'
-};
+const InputWrapper = styled.div`
+    box-shadow: 0 0 5px black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 60px 0 0 0;
+    padding: 55px 0 55px 0;
 
-const squareWrapper = {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center'
-};
+        @media (max-width: 920px) and (min-width: 786px) {
+            
+        }
 
-const first = {
-    width: 30,
-    height: 30,
-    backgroundColor: '#fbaf5d',
-    margin: '10px 10px 0 0',
-    cursor: 'pointer'
-};
+        @media (max-width: 780px) and (min-width: 640px) {
+            flex-direction: row;
+        }
 
-const second = {
-    width: 30,
-    height: 30,
-    backgroundColor: '#7cc576',
-    margin: '10px 10px 0 0',
-    cursor: 'pointer'
-};
+        @media (max-width: 635px) and (min-width: 320px) {
+            flex-direction: column;
+            text-align: center;
+        }
+`;
 
-const third = {
-    width: 30,
-    height: 30,
-    backgroundColor: '#5674b9',
-    margin: '10px 10px 0 0',
-    cursor: 'pointer'
-};
+const TagNameInput = styled.input`
+    max-width: 465px;
+    height: 95px;
+    text-align: center;
+    color: #778094;
+    font-family: Roboto;
+    font-size: 45px;
+    font-weight: 400;
+    text-transform: uppercase;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.45);
+    
+        @media (max-width: 960px) {
+            max-width: 380px;
+        }
 
-const forth = {
-    width: 30,
-    height: 30,
-    backgroundColor: '#f26d7d',
-    margin: '10px 10px 0 0',
-    cursor: 'pointer'
-};
+        @media (max-width: 920px) and (min-width: 786px) {
+            max-width: 350px;
+        }
 
-const fifth = {
-    width: 30,
-    height: 30,
-    backgroundColor: '#c69c6d',
-    margin: '10px 10px 0 0',
-    cursor: 'pointer'
-};
+        @media (max-width: 780px) and (min-width: 640px) {
+            max-width: 280px;
+        }
 
-const six = {
-    width: 30,
-    height: 30,
-    backgroundColor: '#f06eaa',
-    margin: '10px 10px 0 0',
-    cursor: 'pointer'
-};
+        @media (max-width: 635px) and (min-width: 320px) {
+            max-width: 280px;
+        }
+`;
 
-const titleNameInput = {
-    maxWidth: 465,
-    height: 95,
-    textAlign: 'center',
-    color: '#778094',
-    fontFamily: 'Roboto',
-    fontSize: 45,
-    fontWeight: 400,
-    textTransform: 'uppercase',
-    boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.45)'
-};
+const SquareWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+`;
 
-const Search = (props) => (
-    <div id='search' style={inputsWrapper}>
-        <div>
-            <input style={tagNameInput} type='search' placeholder='tag name' />
-            <div style={squareWrapper}>
-                <div style={first} />
-                <div style={second} />
-                <div style={third} />
-                <div style={forth} />
-                <div style={fifth} />
-                <div style={six} />
-            </div>
-        </div>
-        <div>
-            <input style={titleNameInput} type='search' placeholder='title name' />
-        </div>
-    </div>
-);
+const First = styled.div`
+    width: 30px;
+    height: 30px;
+    background-color: #fbaf5d;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+`;
 
-export default Search;
+const Second = styled.div`
+    width: 30px;
+    height: 30px;
+    background-color: #7cc576;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+`;
+
+const Third = styled.div`
+    width: 30px;
+    height: 30px;
+    background-color: #5674b9;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+`;
+
+const Forth = styled.div`
+        width: 30px;
+        height: 30px;
+        background-color: #f26d7d;
+        margin: 10px 10px 0 0;
+        cursor: pointer;
+`;
+
+const Fifth = styled.div`
+        width: 30px;
+        height: 30px;
+        background-color: #c69c6d;
+        margin: 10px 10px 0 0;
+        cursor: pointer;
+`;
+
+const Six = styled.div`
+        width: 30px;
+        height: 30px;
+        background-color: #f06eaa;
+        margin: 10px 10px 0 0;
+        cursor: pointer;
+`;
+
+const TitleNameInput = styled.input`
+        max-width: 465px;
+        height: 95px;
+        text-align: center;
+        color: #778094;
+        font-family: Roboto;
+        font-size: 45px;
+        font-weight: 400;
+        text-transform: uppercase;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.45);
+
+        @media (max-width: 960px) {
+            max-width: 380px;
+        }
+
+        @media (max-width: 920px) and (min-width: 786px) {
+            max-width: 350px;
+        }
+
+        @media (max-width: 780px) and (min-width: 640px) {
+            max-width: 280px;
+        }
+
+        @media (max-width: 635px) and (min-width: 320px) {
+            margin-top: 15px;
+            max-width: 280px;
+        }
+`;
+
+class Search extends Component {
+    render (props) {
+        return (
+            <InputWrapper id='search'>
+                <div>
+                    <TagNameInput onInput={search} type='search' placeholder='tag name' />
+                    <SquareWrapper>
+                        <First />
+                        <Second />
+                        <Third />
+                        <Forth />
+                        <Fifth />
+                        <Six />
+                    </SquareWrapper>
+                </div>
+                <div>
+                    <TitleNameInput onInput={search} type='search' placeholder='title name' />
+                </div>
+            </InputWrapper>
+        );
+    }
+}
+
+async function search (e) {
+    const search = await fetch(`http://localhost/wordpress/wp-json/wp/v2/posts?slug=${e.target.value.toLowerCase()}`);
+    const resSearch = await search.json();
+    console.log(resSearch);
+}
+
+export default connect(state => {
+    return {user: state};
+})(Search);

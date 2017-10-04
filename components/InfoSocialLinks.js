@@ -1,44 +1,45 @@
 import Link from 'next/link';
+import styled from 'styled-components';
 
-const socialLinksBlock = {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-};
+const SocialLinksBlock = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`;
 
-const socialLinks = {
-    marginRight: 28,
-    maxWidth: 50,
-    textAlign: 'center',
-    cursor: 'pointer'
-};
+const SocialLinks = styled.div`
+    margin-right: 28px;
+    max-width: 50px;
+    text-align: center;
+    cursor: pointer;
+`;
 
-const socialLinksLast = {
-    maxWidth: 50,
-    textAlign: 'center',
-    cursor: 'pointer'
-};
+const SocialLinksLast = styled.div`
+    max-width: 50px;
+    text-align: center;
+    cursor: pointer;
+`;
 
-const img = {
-    width: '100%'
-};
+const Img = styled.img`
+    width: 100%;
+`;
 
 const infoSocialLinks = (props) => (
-    <div style={socialLinksBlock}>
-        <div style={socialLinks}>
-            <Link href='/'><img style={img} src='/static/facebook.png' /></Link>
-        </div>
-        <div style={socialLinks}>
-            <Link href='/'><img style={img} src='/static/google.png' /></Link>
-        </div>
-        <div style={socialLinks}>
-            <Link href='/'><img style={img} src='/static/linkedin.png' /></Link>
-        </div>
-        <div style={socialLinksLast}>
-            <Link href='/'><img style={img} src='/static/twitter.png' /></Link>
-        </div>
-    </div>
+    <SocialLinksBlock>
+        <SocialLinks>
+            <Link href='/'><Img src='/static/facebook.png' /></Link>
+        </SocialLinks>
+        <SocialLinks>
+            <Link href='/'><Img src='/static/google.png' /></Link>
+        </SocialLinks>
+        <SocialLinks>
+            <Link href='/'><Img src='/static/linkedin.png' /></Link>
+        </SocialLinks>
+        <SocialLinksLast>
+            <Link href='/'><Img src='/static/twitter.png' /></Link>
+        </SocialLinksLast>
+    </SocialLinksBlock>
 );
 
 export default infoSocialLinks;

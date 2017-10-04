@@ -1,30 +1,72 @@
 import Link from 'next/link';
 import Masonry from 'react-masonry-component';
+import styled from 'styled-components';
 
-const img = {
-    width: '100%',
-    display: 'block'
-};
+const Img = styled.img`
+    width: 100%;
+    display: block;
+`;
 
-const card = {
-    boxShadow: '0 5px 5px rgba(0, 0, 0, 0.31)',
-    marginBottom: 30,
-    width: 685
-};
+const Card = styled.div`
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.31);
+    margin-bottom: 30px;
+    width: 685px;
 
-const cardImg = {
-    position: 'relative'
-};
+        @media (max-width: 960px) {
+            width: 100%;
+        }
+  
+`;
 
-const description = {
-    margin: 0,
-    padding: '5px 0 5px 0',
-    color: '#fff',
-    textTransform: 'uppercase',
-    fontSize: 25,
-    fontWeight: 'bold',
-    fontFamily: 'Roboto'
-};
+const CardImg = styled.div`
+    position: relative;
+    cursor: pointer;
+`;
+
+const Description = styled.span`
+    margin: 0;
+    padding: 5px 0 5px 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Roboto;
+`;
+
+const TitleName = styled.div`
+    color: #000;
+    padding: 10px 0px 55px 20px;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-weight: 300;
+`;
+
+const Msnry = styled.div`
+    margin-top: 200px;
+
+      @media (max-width: 960px) {
+        margin-top: 100px;
+        }
+
+      @media (max-width: 920px) and (min-width: 786px) {
+          margin-top: 100px;
+        }
+
+      @media (max-width: 780px) and (min-width: 640px) {
+            margin-top: 100px;
+        }
+
+      @media (max-width: 635px) and (min-width: 320px) {
+          margin-top: 50px;
+      }
+`;
+
+const Div = styled.div`
+    > p {
+      margin: 5px;
+  }
+`;
 
 const articleName = {
     width: 200,
@@ -32,15 +74,6 @@ const articleName = {
     position: 'absolute',
     bottom: 0,
     textAlign: 'center'
-};
-
-const titleName = {
-    color: '#000',
-    padding: '10px 0px 55px 20px',
-    fontSize: 35,
-    textTransform: 'uppercase',
-    fontFamily: 'Roboto',
-    fontWeight: 300
 };
 
 const colors = {
@@ -55,10 +88,6 @@ const colors = {
 const masonryOptions = {
     transitionDuration: 0,
     gutter: 30
-};
-
-const masonry = {
-    marginTop: '200'
 };
 
 function getCategory (categories, id) {
@@ -77,23 +106,25 @@ function getColor (slug) {
 }
 
 const PostsBig = (props) => (
-    <Masonry id='masonry' style={masonry} options={masonryOptions}>
-        {props.shows && props.shows.map((show) => (
-            <div className='card' style={card} key={show.id}>
-                <div className='card_img' style={cardImg}>
-                    <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
-                        <a style={description}>
-                            <img style={img} src={show.better_featured_image.source_url} />
-                            <div className='title' style={getColor(getCategory(props.categories, show.categories[0]))} dangerouslySetInnerHTML={{__html: show.excerpt.rendered}} />
-                        </a>
-                    </Link>
-                </div>
-                <div style={titleName}>
-                    <span>{show.title.rendered}</span>
-                </div>
-            </div>
-        ))}
-    </Masonry>
+    <Msnry>
+        <Masonry id='masonry' options={masonryOptions}>
+            {props.shows && props.shows.map((show) => (
+                <Card key={show.id}>
+                    <CardImg>
+                        <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
+                            <Description>
+                                <Img src={show.better_featured_image.source_url} />
+                                <Div style={getColor(getCategory(props.categories, show.categories[0]))} dangerouslySetInnerHTML={{__html: show.excerpt.rendered}} />
+                            </Description>
+                        </Link>
+                    </CardImg>
+                    <TitleName>
+                        <span>{show.title.rendered}</span>
+                    </TitleName>
+                </Card>
+            ))}
+        </Masonry>
+    </Msnry>
 );
 
 export default PostsBig;

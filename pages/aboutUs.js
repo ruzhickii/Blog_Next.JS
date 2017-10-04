@@ -1,14 +1,15 @@
 import Layout from '../components/MyLayout';
 import {makeStore} from '../store/index';
 import wrapper from './wrapper';
+import styled from 'styled-components';
 
-const style = {
-    fontSize: 50,
-    textAlign: 'center'
-};
+const Page = styled.p`
+    font-size: 50px;
+    text-align: center;
+`;
 
 export default wrapper(makeStore)(({url: {pathname}}) => (
     <Layout>
-        <p style={style}>ABOUT US PAGE!</p>
+        <Page>ABOUT US PAGE!</Page>
     </Layout>
 ));
